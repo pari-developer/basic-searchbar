@@ -3,17 +3,27 @@ p {
   font-family: Lato;
 }
 
+body {
+  background-color: #00b4cc;
+}
+
 input {
   border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
   font-size: 16px;
   width: 100%;
+  border-radius: 5px;
 }
 
 .autocomplete {
   width: 300px;
   position: relative;
+}
+
+.autocomplete:focus {
+  border: 4px solid #08a1b6;
+  outline: none;
 }
 
 .autocomplete-items {

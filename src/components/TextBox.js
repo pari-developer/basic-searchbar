@@ -38,7 +38,7 @@ export default function TextBox() {
   return (
     <>
       <div className="autocomplete">
-        <input type="text" value={searchTerm} onChange={handleSearchTermChange} />
+        <input type="text" value={searchTerm} onChange={handleSearchTermChange} placeholder='Start Typing....' />
       </div>
       <div>
         <ul className="autocomplete-items">
