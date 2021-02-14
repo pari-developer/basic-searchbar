@@ -7,26 +7,26 @@ export default function TextBox() {
   const [list, showList] = React.useState([]);
   const [error, showError] = React.useState("");
 
-  let cachedSearchText = '';
+  let cachedSearchText = "";
 
-  const handleList = (val,cacheText) => {
-    if(val === cacheText) {
-    console.log(val);
-    let newData = data.filter(
-      el => el.first_name.toLowerCase().indexOf(val.toLowerCase()) > -1
-    );
-    showList(newData);
-    if (newData.length === 0) {
-      showError("User not found ");
-    } else {
-      showError("");
+  const handleList = (val, cacheText) => {
+    if (val === cacheText) {
+      console.log(val);
+      let newData = data.filter(
+        el => el.first_name.toLowerCase().indexOf(val.toLowerCase()) > -1
+      );
+      showList(newData);
+      if (newData.length === 0) {
+        showError("User not found ");
+      } else {
+        showError("");
+      }
     }
   };
-}
   const handleSearchTermChange = e => {
     setSearchTerm(e.target.value);
-    cachedSearchText = e.target.value
-    handleList(e.target.value,cachedSearchText);
+    cachedSearchText = e.target.value;
+    handleList(e.target.value, cachedSearchText);
   };
 
   const handleClick = e => {
@@ -38,7 +38,12 @@ export default function TextBox() {
   return (
     <>
       <div className="autocomplete">
-        <input type="text" value={searchTerm} onChange={handleSearchTermChange} placeholder='Start Typing....' />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+          placeholder="Start Typing...."
+        />
       </div>
       <div>
         <ul className="autocomplete-items">
@@ -51,7 +56,7 @@ export default function TextBox() {
           })}
         </ul>
       </div>
-      <div>{error}</div>
+      <div className='error-text'>{error}</div>
     </>
   );
 }

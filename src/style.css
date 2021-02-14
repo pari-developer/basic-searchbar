@@ -35,14 +35,27 @@ input {
   width: 50%;
 }
 
-ul {
-  list-style-type: none;
-}
-
 li {
   padding-left: 20px;
 }
 
 li:hover {
   background-color: green;
+}
+
+ul.autocomplete-items {
+  display: block;
+  list-style: none;
+  width: 30 rem;
+}
+
+ul.autocomplete-items li {
+  display: "block";
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.error-text {
+  margin-top: 12px;
 }
