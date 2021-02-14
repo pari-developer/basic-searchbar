@@ -1,0 +1,38 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.autocomplete {
+  width: 300px;
+  position: relative;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding-left: 20px;
+}
+
+li:hover {
+  background-color: green;
+}
