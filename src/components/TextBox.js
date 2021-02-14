@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default function TextBox() {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [list, showList] = React.useState([]);
-  const [error, showError] =  React.useState("");
+  const [error, showError] = React.useState("");
 
   const handleList = val => {
     console.log(val);
@@ -13,8 +13,10 @@ export default function TextBox() {
       el => el.first_name.toLowerCase().indexOf(val.toLowerCase()) > -1
     );
     showList(newData);
-    if(newData.length === 0) {
-      showError("Not able to track user")
+    if (newData.length === 0) {
+      showError("User not found ");
+    } else {
+      showError("");
     }
   };
 
@@ -45,6 +47,7 @@ export default function TextBox() {
           })}
         </ul>
       </div>
+      <div>{error}</div>
     </>
   );
 }
