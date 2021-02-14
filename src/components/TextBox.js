@@ -7,7 +7,10 @@ export default function TextBox() {
   const [list, showList] = React.useState([]);
   const [error, showError] = React.useState("");
 
-  const handleList = val => {
+  let cachedSearchText = '';
+
+  const handleList = (val,cacheText) => {
+    if(val === cacheText) {
     console.log(val);
     let newData = data.filter(
       el => el.first_name.toLowerCase().indexOf(val.toLowerCase()) > -1
@@ -19,10 +22,11 @@ export default function TextBox() {
       showError("");
     }
   };
-
-  const handleChange = e => {
+}
+  const handleSearchTermChange = e => {
     setSearchTerm(e.target.value);
-    handleList(e.target.value);
+    cachedSearchText = e.target.value
+    handleList(e.target.value,cachedSearchText);
   };
 
   const handleClick = e => {
@@ -34,7 +38,7 @@ export default function TextBox() {
   return (
     <>
       <div className="autocomplete">
-        <input type="text" value={searchTerm} onChange={handleChange} />
+        <input type="text" value={searchTerm} onChange={handleSearchTermChange} />
       </div>
       <div>
         <ul className="autocomplete-items">
